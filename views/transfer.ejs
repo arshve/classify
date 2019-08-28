@@ -1,0 +1,71 @@
+<% include partials/header %>
+<!-- Main Content -->
+<main>
+  <!-- Video Stream -->
+  <div class="videoContainer">
+    <div class="stay">
+      <div class="info">
+        <span id="modelStatus">Loading Model!</span> |
+        <span id="videoStatus">Loading Video!</span>
+      </div>
+      <hr />
+      <div class="result">
+        <h2 id="result">Need Data And Training!</h2>
+        <h2 id="confidence"></h2>
+      </div>
+      <video id="videoStream">
+        Authorize Need To Use WebCam
+      </video>
+    </div>
+  </div>
+
+  <!-- Model Creator Component -->
+  <div class="modelCreator">
+    <!-- Header Name -->
+    <div class="title">
+      <h2>Model Creator</h2>
+    </div>
+    <hr />
+    <!-- Label Input -->
+    <div class="inputLabel">
+      <input id="className" type="text" placeholder="Label Name" />
+      <button id="addBtn">
+        Add
+      </button>
+    </div>
+    <div class="infoSpan">
+      <span id="info">Add Label Name to Classify</span>
+    </div>
+    <div class="imgItems"></div>
+    <!-- <div class="option">
+      <div>
+        <label for="learnRate">Learning Rate</label>
+        <input id="learnRate" type="text" />
+        <label for="hidUnit">Hidden Unit</label>
+        <input id="hidUnit" type="text" />
+      </div>
+      <div>
+        <label for="learnRate">Learning Rate</label>
+        <input id="learnRate" type="text" />
+        <label for="hidUnit">Hidden Unit</label>
+        <input id="hidUnit" type="text" />
+      </div>
+    </div> -->
+    <div class="btnGroup">
+      <button id="train">Train Model</button>
+      <div class="loss">
+        <span id="loss"></span>
+      </div>
+    </div>
+    <div class="btnGroup">
+      <button id="predict">Predict</button>
+    </div>
+    <div class="btnGroup">
+      <button id="save">Save Model</button>
+    </div>
+  </div>
+</main>
+
+<script src="/public/js/transfer.js"></script>
+<script src="/js/camera.js"></script>
+<% include partials/footer %>

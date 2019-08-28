@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:400,600&display=swap");
+
+$primaryColor: #333432;
+$secondaryColor: #6e6e6e;
+$hoverColor: #aa0000;
+$textColor: #fff;
+
+@import "./comp/NavBar";
+
+* {
+  font-family: "Muli", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: $primaryColor;
+}
+
+/* NavNar Style */
+li,
+a,
+button {
+  font-weight: 600;
+  font-size: 20px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+/* Content Style */
+
+// Backup Flex
+main {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+  color: $textColor;
+}
+
+/* Video */
+.videoContainer {
+  width: 60%;
+  height: 70vh;
+  margin: 11.85vh 0;
+  float: left;
+  .stay {
+    display: block;
+    overflow: hidden;
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    text-align: center;
+    video {
+      position: relative;
+      top: -100px;
+      width: 100%;
+    }
+  }
+  .result {
+    margin-bottom: 130px;
+  }
+  .info {
+    margin-bottom: 10px;
+    color: #6e6e6e;
+  }
+}
+
+.predictContainer {
+  width: 70%;
+  height: 90vh;
+  margin-top: 2vh;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  .cameraContainer {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    video {
+      position: relative;
+      width: 100%;
+      min-height: 50vh;
+    }
+  }
+  .status {
+    margin: 3vh;
+    text-align: center;
+    .info {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #6e6e6e;
+    }
+    .result {
+      margin-top: 10px;
+    }
+  }
+}
+
+/* Model Creator Component */
+.modelCreator {
+  width: 33%;
+  margin: 5vh 5vh;
+  margin-right: 0;
+  float: left;
+  .title h2 {
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 2px 2px 5px #edf0f1;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .infoSpan {
+    margin-top: 50px !important;
+    margin-bottom: 20px;
+  }
+}
+
+.inputLabel {
+  margin: 20px;
+  justify-content: center;
+  display: flex;
+  input {
+    height: 50px;
+    width: 60%;
+    border-radius: 15px 0 0 15px;
+    padding: 10px;
+    color: $textColor;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: $primaryColor;
+  }
+  form {
+    width: 100%;
+    text-align: center;
+  }
+
+  #addBtn {
+    @extend input;
+    width: 20%;
+    border-radius: 0 15px 15px 0;
+    border-left: none;
+    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+      background-color: $hoverColor;
+      opacity: 0.9;
+      transition: all ease 0.3s;
+    }
+  }
+}
+
+.imgItems {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  margin: 10px 0;
+}
+
+.imgItem {
+  height: 8vh;
+  margin: 15px;
+  cursor: pointer;
+  border: 1px solid whitesmoke;
+  border-radius: 15px;
+  padding: 5px;
+  flex-direction: row;
+  flex: 1 1 20vh;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  span {
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $hoverColor;
+    opacity: 0.8;
+    transition: all ease 0.3s;
+  }
+}
+
+.btnGroup {
+  margin-top: 40px;
+  text-align: center;
+  button {
+    height: 50px;
+    width: 90%;
+    border-radius: 15px;
+    &:hover {
+      cursor: pointer;
+      background-color: $hoverColor;
+      opacity: 0.8;
+      transition: all ease 0.3s;
+    }
+  }
+}
+
+.loadBtn {
+  .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .inputfile + label {
+    font-size: 1.25em;
+    color: white;
+    background-color: black;
+  }
+
+  .inputfile:focus + label,
+  .inputfile + label:hover {
+    cursor: pointer;
+    background-color: $hoverColor;
+    opacity: 0.6;
+    transition: all ease 0.3s;
+  }
+  .inputfile + label {
+    cursor: pointer;
+  }
+}
+
+.loss {
+  margin: 10px;
+  span {
+    background-color: #3e3f42;
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 1vh;
+  text-align: center;
+  width: 100%;
+  background-color: $primaryColor;
+  span {
+    color: $secondaryColor;
+    // background-color: $secondaryColor;
+    .email {
+      font-weight: 100;
+    }
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Placeholder Preset */
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}

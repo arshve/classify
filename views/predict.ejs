@@ -1,0 +1,43 @@
+<% include partials/header %>
+<!-- Main Content -->
+<main>
+  <!-- Video Stream -->
+  <div class="predictContainer">
+    <div class="cameraContainer">
+      <div class="status">
+        <div class="info">
+          <span id="modelStatus">Loading Model!</span> |
+          <span id="videoStatus">Loading Video!</span>
+        </div>
+        <hr />
+        <div class="result">
+          <h2 id="result">Need Trained Model To Predict</h2>
+        </div>
+      </div>
+      <video id="videoStream">
+        Authorize Need To Use WebCam
+      </video>
+    </div>
+    <div class="loadBtn">
+      <div class="btnGroup">
+        <input
+          type="file"
+          name="file"
+          id="loadBtn"
+          class="inputfile"
+          multiple
+        />
+        <label for="loadBtn"
+          ><strong class="labelBtn">Click Here to Load Model...</strong></label
+        >
+      </div>
+      <div class="btnGroup">
+        <button type="button" id="predict" label="Predict">Predict</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/public/js/predict.js"></script>
+<script src="/js/camera.js"></script>
+<% include partials/footer %>
