@@ -27,6 +27,7 @@ svg .b:hover {
   cursor: pointer;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  margin: -5px;
 }
 
 .git {
@@ -88,7 +89,7 @@ main {
 /* Video */
 .videoContainer {
   width: 60%;
-  height: 70vh;
+  height: 65vh;
   margin: 11.85vh 0;
   float: left;
 }
@@ -169,7 +170,6 @@ main {
 .modelCreator .title h2 {
   font-size: 60px;
   text-align: center;
-  text-shadow: 2px 2px 5px #edf0f1;
   font-weight: 500;
   margin-bottom: 20px;
 }
@@ -177,6 +177,10 @@ main {
 .modelCreator .infoSpan {
   margin-top: 50px !important;
   margin-bottom: 20px;
+}
+
+.modelCreator input, .modelCreator .inputLabel #addBtn, .inputLabel .modelCreator #addBtn {
+  color: #fff;
 }
 
 .inputLabel {
@@ -189,7 +193,7 @@ main {
   display: flex;
 }
 
-.inputLabel input, .inputLabel #addBtn {
+.inputLabel #className {
   height: 50px;
   width: 60%;
   border-radius: 15px 0 0 15px;

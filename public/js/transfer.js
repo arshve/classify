@@ -7,13 +7,32 @@ let predict;
 let input;
 let video = document.querySelector("#videoStream");
 
-const option = {
+var option = {
   learningRate: 0.0001,
   hiddenUnits: 100,
-  epochs: 20,
-  numClasses: 4,
+  epochs: 40,
+  numClasses: 0,
   batchSize: 0.4
+  // BatchSize 16,32,64,128,256
 };
+document.getElementById("lr").value = option.learningRate;
+document.getElementById("epoch").value = option.epochs;
+
+function lRate(val) {
+  option.learningRate = parseFloat(val);
+}
+
+function epoch(val) {
+  option.epochs = parseInt(val);
+}
+function epoch(val) {
+  option.epochs = parseInt(val);
+}
+function numClass() {
+  option.numClasses++;
+  document.getElementById("class").innerHTML = option.numClasses;
+  console.log(option);
+}
 
 function setup() {
   noCanvas();
@@ -77,11 +96,13 @@ function setupButtons() {
   // Train Button
   train = select("#train");
   train.mousePressed(function() {
+    let ls = 0;
     classifier.train(function(lossValue) {
       if (lossValue) {
         loss = lossValue;
         select("#loss").html("Loss: " + loss);
-        console.log(loss);
+        console.log("E " + ls + ". " + loss);
+        ls++;
       } else {
         select("#loss").html("Done Training! Final Loss: " + loss);
       }

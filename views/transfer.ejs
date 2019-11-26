@@ -8,6 +8,7 @@
         <span id="modelStatus">Loading Model!</span> |
         <span id="videoStatus">Loading Video!</span>
       </div>
+
       <hr />
       <div class="result">
         <h2 id="result">Need Data And Training!</h2>
@@ -27,9 +28,33 @@
     </div>
     <hr />
     <!-- Label Input -->
+    <div>
+      Learning Rate:
+      <input
+        type="number"
+        id="lr"
+        step="0.0001"
+        min="0"
+        onchange="lRate(this.value)"
+        style="max-width: 4em; border: red;"
+        required
+      />
+      Epoch:
+      <input
+        type="number"
+        id="epoch"
+        step="5"
+        min="0"
+        onchange="epoch(this.value)"
+        required
+      />
+      Class:
+      <span id="class">0</span>
+    </div>
+
     <div class="inputLabel">
       <input id="className" type="text" placeholder="Label Name" />
-      <button id="addBtn">
+      <button id="addBtn" onclick="numClass()">
         Add
       </button>
     </div>
