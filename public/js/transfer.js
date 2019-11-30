@@ -11,7 +11,7 @@ let option = {
   learningRate: 0.0001,
   hiddenUnits: 100,
   epochs: 25,
-  numClasses: 0,
+  numClasses: 2,
   batchSize: 16
   // BatchSize 16,32,64,128,256
 };
@@ -29,15 +29,20 @@ function batchSize(val) {
   option.batchSize = parseInt(val);
   console.log(option);
 }
-function numClass() {
-  option.numClasses++;
-  document.getElementById("class").innerHTML = option.numClasses;
+function numClass(val) {
+  option.numClasses = parseInt(val);
   console.log(option);
+}
+
+function classCount() {
+  var count = 0;
+  document.getElementById("class").innerHTML = count++;
 }
 
 document.getElementById("lr").value = option.learningRate;
 document.getElementById("epoch").value = option.epochs;
 document.getElementById("batch").value = option.batchSize;
+document.getElementById("classMax").value = option.numClasses;
 
 var timeleft = 10;
 var downloadTimer = setInterval(function() {
@@ -92,7 +97,7 @@ function setupButtons() {
   addBtn.mouseClicked(function() {
     let num = 0;
     if (select("#className").value() == "" || img >= option.numClasses) {
-      alert("Masukan Nama Objek / Jumlah Objek Sudah Penuh");
+      alert("You Reach the Maximum Class!");
     } else {
       info.html("Click to add images!");
       let className = select("#className").value();

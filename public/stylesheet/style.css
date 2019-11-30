@@ -196,6 +196,10 @@ main {
   color: #fff;
 }
 
+.modelCreator .option .setting {
+  text-align: center;
+}
+
 .inputLabel {
   margin: 20px;
   -webkit-box-pack: center;

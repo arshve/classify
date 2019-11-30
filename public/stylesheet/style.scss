@@ -109,10 +109,6 @@ main {
     font-weight: 500;
     margin-bottom: 20px;
   }
-  // .infoSpan {
-  //   margin-top: 50px !important;
-  //   margin-bottom: 20px;
-  // }
   .option {
     display: flex;
     justify-content: space-between;
@@ -126,6 +122,9 @@ main {
     select {
       border: none;
       color: #fff;
+    }
+    .setting {
+      text-align: center;
     }
   }
 }

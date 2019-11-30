@@ -36,7 +36,7 @@
             working, need to change in hard code -->
       </div>
       <div class="option">
-        <div>
+        <div class="setting">
           Learning Rate: <br />
           <input
             type="number"
@@ -47,30 +47,32 @@
             required
           />
         </div>
-        <div>
+        <div class="setting">
           Batch Size: <br />
           <select name="Batch" id="batch" onchange="batchSize(this.value)">
             <option value="16">16</option>
             <option value="32">32</option>
             <option value="64">64</option>
           </select>
-          <!-- <input
-            type="number"
-            id="batch"
-            step="5"
-            min="0"
-            onchange="epoch(this.value)"
-            
-          /> -->
         </div>
-        <div>
+        <div class="setting">
           Epoch: <br />
           <input
             type="number"
             id="epoch"
             step="5"
             min="0"
-            onchange="epoch(this.value)"
+            onchange="numClass(this.value)"
+            required
+          />
+        </div>
+        <div class="setting">
+          Max Class: <br />
+          <input
+            type="number"
+            id="classMax"
+            min="2"
+            onchange="numClass(this.value)"
             required
           />
         </div>
@@ -78,12 +80,12 @@
 
       <div class="inputLabel">
         <input id="className" type="text" placeholder="Label Name" />
-        <button id="addBtn" onclick="numClass()">
+        <button id="addBtn">
           Add
         </button>
       </div>
-      Class:
-      <span id="class">0</span>
+      <!-- Class:
+      <span id="class"></span> -->
     </div>
     <div class="infoSpan">
       <span id="info">Add Label Name to Classify</span>
