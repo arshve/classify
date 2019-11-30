@@ -29,57 +29,75 @@
     <hr />
     <!-- Label Input -->
     <div>
-      Learning Rate:
-      <input
-        type="number"
-        id="lr"
-        step="0.0001"
-        min="0"
-        onchange="lRate(this.value)"
-        style="max-width: 4em; border: red;"
-        required
-      />
-      Epoch:
-      <input
-        type="number"
-        id="epoch"
-        step="5"
-        min="0"
-        onchange="epoch(this.value)"
-        required
-      />
+      <div style="text-align: center; font-size: 10px; margin-top: 5px;">
+        <span id="set">Change Setting Before</span>
+        <span id="countdown"></span>
+        <!-- <span style="color: red; font-size: 20px;">!</span>Setting currently not
+            working, need to change in hard code -->
+      </div>
+      <div class="option">
+        <div>
+          Learning Rate: <br />
+          <input
+            type="number"
+            id="lr"
+            step="0.0001"
+            min="0"
+            onchange="lRate(this.value)"
+            required
+          />
+        </div>
+        <div>
+          Batch Size: <br />
+          <select name="Batch" id="batch" onchange="batchSize(this.value)">
+            <option value="16">16</option>
+            <option value="32">32</option>
+            <option value="64">64</option>
+          </select>
+          <!-- <input
+            type="number"
+            id="batch"
+            step="5"
+            min="0"
+            onchange="epoch(this.value)"
+            
+          /> -->
+        </div>
+        <div>
+          Epoch: <br />
+          <input
+            type="number"
+            id="epoch"
+            step="5"
+            min="0"
+            onchange="epoch(this.value)"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="inputLabel">
+        <input id="className" type="text" placeholder="Label Name" />
+        <button id="addBtn" onclick="numClass()">
+          Add
+        </button>
+      </div>
       Class:
       <span id="class">0</span>
-    </div>
-
-    <div class="inputLabel">
-      <input id="className" type="text" placeholder="Label Name" />
-      <button id="addBtn" onclick="numClass()">
-        Add
-      </button>
     </div>
     <div class="infoSpan">
       <span id="info">Add Label Name to Classify</span>
     </div>
-    <div class="imgItems"></div>
-    <!-- <div class="option">
-      <div>
-        <label for="learnRate">Learning Rate</label>
-        <input id="learnRate" type="text" />
-        <label for="hidUnit">Hidden Unit</label>
-        <input id="hidUnit" type="text" />
-      </div>
-      <div>
-        <label for="learnRate">Learning Rate</label>
-        <input id="learnRate" type="text" />
-        <label for="hidUnit">Hidden Unit</label>
-        <input id="hidUnit" type="text" />
-      </div>
-    </div> -->
+    <div class="imgItems">
+      <!-- Image Button -->
+      <!-- Image Button -->
+      <!-- Image Button -->
+    </div>
     <div class="btnGroup">
       <button id="train">Train Model</button>
       <div class="loss">
-        <span id="loss"></span>
+        <span id="loss"></span> <br />
+        <span id="more"></span>
       </div>
     </div>
     <div class="btnGroup">

@@ -65,6 +65,7 @@ main {
   }
 }
 
+// PREDICT
 .predictContainer {
   width: 70%;
   height: 90vh;
@@ -108,13 +109,24 @@ main {
     font-weight: 500;
     margin-bottom: 20px;
   }
-  .infoSpan {
-    margin-top: 50px !important;
-    margin-bottom: 20px;
-  }
-
-  input {
-    color: $textColor;
+  // .infoSpan {
+  //   margin-top: 50px !important;
+  //   margin-bottom: 20px;
+  // }
+  .option {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    input {
+      border: none;
+      text-align: center;
+      color: #fff;
+      width: 100px;
+    }
+    select {
+      border: none;
+      color: #fff;
+    }
   }
 }
 
@@ -138,16 +150,17 @@ main {
   }
 
   #addBtn {
-    @extend input;
     width: 20%;
     border-radius: 0 15px 15px 0;
     border-left: none;
     cursor: pointer;
+    color: red;
     &:hover {
       cursor: pointer;
       background-color: $hoverColor;
       opacity: 0.9;
       transition: all ease 0.3s;
+      color: $textColor;
     }
   }
 }
@@ -175,6 +188,7 @@ main {
   h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
+    color: rgb(202, 11, 11);
     background-color: rgba(0, 0, 0, 0);
   }
   span {
@@ -186,21 +200,26 @@ main {
     background-color: $hoverColor;
     opacity: 0.8;
     transition: all ease 0.3s;
+    h3 {
+      color: #fff;
+    }
   }
 }
 
 .btnGroup {
-  margin-top: 40px;
+  margin-top: 15px;
   text-align: center;
   button {
     height: 50px;
     width: 90%;
     border-radius: 15px;
+    color: $secondaryColor;
     &:hover {
       cursor: pointer;
       background-color: $hoverColor;
       opacity: 0.8;
       transition: all ease 0.3s;
+      color: $textColor;
     }
   }
 }
@@ -233,9 +252,12 @@ main {
 }
 
 .loss {
-  margin: 10px;
-  span {
+  margin: 5px;
+  #loss {
     background-color: #3e3f42;
+  }
+  #more {
+    font-size: 12px;
   }
 }
 

@@ -7,26 +7,27 @@ let predict;
 let input;
 let video = document.querySelector("#videoStream");
 
-var option = {
+let option = {
   learningRate: 0.0001,
   hiddenUnits: 100,
-  epochs: 40,
+  epochs: 25,
   numClasses: 0,
-  batchSize: 0.4
+  batchSize: 16
   // BatchSize 16,32,64,128,256
 };
-document.getElementById("lr").value = option.learningRate;
-document.getElementById("epoch").value = option.epochs;
 
+// Function Object for Setting
 function lRate(val) {
   option.learningRate = parseFloat(val);
-}
-
-function epoch(val) {
-  option.epochs = parseInt(val);
+  console.log(option);
 }
 function epoch(val) {
   option.epochs = parseInt(val);
+  console.log(option);
+}
+function batchSize(val) {
+  option.batchSize = parseInt(val);
+  console.log(option);
 }
 function numClass() {
   option.numClasses++;
@@ -34,13 +35,32 @@ function numClass() {
   console.log(option);
 }
 
+document.getElementById("lr").value = option.learningRate;
+document.getElementById("epoch").value = option.epochs;
+document.getElementById("batch").value = option.batchSize;
+
+var timeleft = 10;
+var downloadTimer = setInterval(function() {
+  document.getElementById("countdown").innerHTML =
+    "<span style='color:red; font-size:15px;'>" + timeleft + "</span> seconds";
+  timeleft -= 1;
+  if (timeleft <= 0) {
+    clearInterval(downloadTimer);
+    document.getElementById("set").innerHTML =
+      "<span style='color:#6e6e6e'>Setting</span>";
+    document.getElementById("countdown").innerHTML =
+      "<span style='color:#6e6e6e'>has been Setup and <span style='color:red; font-size: 12px;'> can't be change </span> anymore</span>";
+  }
+}, 1000);
 function setup() {
   noCanvas();
-  // Extract PreTrain features from MobileNet
-  featureExtractor = ml5.featureExtractor("MobileNet", option, modelReady);
-
-  // Create a new classifier using those features and give the video we want to use
-  classifier = featureExtractor.classification(video, vidReady);
+  // Timeout for setting change
+  setTimeout(() => {
+    // Extract PreTrain features from MobileNet
+    featureExtractor = ml5.featureExtractor("MobileNet", option, modelReady);
+    // Create a new classifier using those features and give the video we want to use
+    classifier = featureExtractor.classification(video, vidReady);
+  }, 10000);
 
   setupButtons();
 }
@@ -74,7 +94,7 @@ function setupButtons() {
     if (select("#className").value() == "" || img >= option.numClasses) {
       alert("Masukan Nama Objek / Jumlah Objek Sudah Penuh");
     } else {
-      info.html("Click the Button Bellow to add images to dataset !");
+      info.html("Click to add images!");
       let className = select("#className").value();
       let imgItems = select(".imgItems");
       let imgItem = createElement("div").addClass("imgItem noselect");
@@ -104,7 +124,14 @@ function setupButtons() {
         console.log("E " + ls + ". " + loss);
         ls++;
       } else {
-        select("#loss").html("Done Training! Final Loss: " + loss);
+        select("#loss").html(
+          "Done Training! Final Loss: <span style='color: red;background-color: #3e3f42'>" +
+            loss +
+            "</span>"
+        );
+        select("#more").html(
+          "Press <span style='color: red'>F12</span> to see loss / epoch"
+        );
       }
     });
   });

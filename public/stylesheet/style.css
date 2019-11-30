@@ -174,12 +174,25 @@ main {
   margin-bottom: 20px;
 }
 
-.modelCreator .infoSpan {
-  margin-top: 50px !important;
-  margin-bottom: 20px;
+.modelCreator .option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10px;
 }
 
-.modelCreator input, .modelCreator .inputLabel #addBtn, .inputLabel .modelCreator #addBtn {
+.modelCreator .option input {
+  border: none;
+  text-align: center;
+  color: #fff;
+  width: 100px;
+}
+
+.modelCreator .option select {
+  border: none;
   color: #fff;
 }
 
@@ -214,6 +227,7 @@ main {
   border-radius: 0 15px 15px 0;
   border-left: none;
   cursor: pointer;
+  color: red;
 }
 
 .inputLabel #addBtn:hover {
@@ -222,6 +236,7 @@ main {
   opacity: 0.9;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
+  color: #fff;
 }
 
 .imgItems {
@@ -264,6 +279,7 @@ main {
 .imgItem h3 {
   font-size: 1.2rem;
   margin-bottom: 5px;
+  color: #ca0b0b;
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -280,8 +296,12 @@ main {
   transition: all ease 0.3s;
 }
 
+.imgItem:hover h3 {
+  color: #fff;
+}
+
 .btnGroup {
-  margin-top: 40px;
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -289,6 +309,7 @@ main {
   height: 50px;
   width: 90%;
   border-radius: 15px;
+  color: #6e6e6e;
 }
 
 .btnGroup button:hover {
@@ -297,6 +318,7 @@ main {
   opacity: 0.8;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
+  color: #fff;
 }
 
 .loadBtn .inputfile {
@@ -328,11 +350,15 @@ main {
 }
 
 .loss {
-  margin: 10px;
+  margin: 5px;
 }
 
-.loss span {
+.loss #loss {
   background-color: #3e3f42;
+}
+
+.loss #more {
+  font-size: 12px;
 }
 
 footer {
