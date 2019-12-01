@@ -34,10 +34,10 @@ function numClass(val) {
   console.log(option);
 }
 
-function classCount() {
-  var count = 0;
-  document.getElementById("class").innerHTML = count++;
-}
+// function classCount(count) {
+//   var count = 0;
+//   document.getElementById("class").innerHTML = count++;
+// }
 
 document.getElementById("lr").value = option.learningRate;
 document.getElementById("epoch").value = option.epochs;

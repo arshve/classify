@@ -7,6 +7,7 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 30px 5%;
+  background-color: #333432;
 }
 
 svg {
@@ -165,6 +166,7 @@ main {
   margin: 5vh 5vh;
   margin-right: 0;
   float: left;
+  background-color: none !important;
 }
 
 .modelCreator .title h2 {
@@ -182,6 +184,8 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-top: 10px;
+  -webkit-animation: fade 35s ease forwards;
+          animation: fade 35s ease forwards;
 }
 
 .modelCreator .option input {
@@ -200,6 +204,28 @@ main {
   text-align: center;
 }
 
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+  to {
+    opacity: 0.1;
+    pointer-events: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+  to {
+    opacity: 0.1;
+    pointer-events: none;
+  }
+}
+
 .inputLabel {
   margin: 20px;
   -webkit-box-pack: center;
@@ -208,6 +234,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #333432;
 }
 
 .inputLabel #className {
@@ -314,6 +341,7 @@ main {
   width: 90%;
   border-radius: 15px;
   color: #6e6e6e;
+  background-color: #333432;
 }
 
 .btnGroup button:hover {
@@ -366,7 +394,6 @@ main {
 }
 
 footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   padding: 1vh;

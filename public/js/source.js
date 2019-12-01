@@ -243,10 +243,10 @@ class Mobilenet {
   async addImageInternal(imgToAdd, label) {
     await this.ready;
     tf.tidy(() => {
-    // Resize gambar
+      // Resize gambar
       const imageResize =
         imgToAdd === this.video ? null : [IMAGE_SIZE, IMAGE_SIZE];
-        // Convert to Tensor
+      // Convert to Tensor
       const processedImg = imgToTensor(imgToAdd, imageResize);
       const prediction = this.mobilenetFeatures.predict(processedImg);
       let y;
@@ -255,18 +255,19 @@ class Mobilenet {
           tf.oneHot(tf.tensor1d([label], "int32"), this.config.numLabels)
         );
 
-      if (this.xs == null) {
-        this.xs = tf.keep(prediction);
-        this.ys = tf.keep(y);
-        this.hasAnyTrainedClass = true;
-      } else {
-        const oldX = this.xs;
-        this.xs = tf.keep(oldX.concat(prediction, 0));
-        const oldY = this.ys;
-        this.ys = tf.keep(oldY.concat(y, 0));
-        oldX.dispose();
-        oldY.dispose();
-        y.dispose();
+        if (this.xs == null) {
+          this.xs = tf.keep(prediction);
+          this.ys = tf.keep(y);
+          this.hasAnyTrainedClass = true;
+        } else {
+          const oldX = this.xs;
+          this.xs = tf.keep(oldX.concat(prediction, 0));
+          const oldY = this.ys;
+          this.ys = tf.keep(oldY.concat(y, 0));
+          oldX.dispose();
+          oldY.dispose();
+          y.dispose();
+        }
       }
     });
     return this;
@@ -302,7 +303,7 @@ class Mobilenet {
           })
         ]
       });
-    } 
+    }
     this.jointModel = tf.sequential();
     this.jointModel.add(this.mobilenetFeatures); // mobilenet
     this.jointModel.add(this.customModel); // transfer layer
@@ -382,16 +383,15 @@ class Mobilenet {
       const predictions = this.jointModel.predict(processedImg);
       return Array.from(predictions.as1D().dataSync());
     });
-    const results = await predictedClasses
-      .map((confidence, index) => {
-        const label =
-          this.mapStringToIndex.length > 0 && this.mapStringToIndex[index]
-            ? this.mapStringToIndex[index]
-            : index;
-        return {
-          label
-        };
-      })
+    const results = await predictedClasses.map((confidence, index) => {
+      const label =
+        this.mapStringToIndex.length > 0 && this.mapStringToIndex[index]
+          ? this.mapStringToIndex[index]
+          : index;
+      return {
+        label
+      };
+    });
     return results;
   }
 

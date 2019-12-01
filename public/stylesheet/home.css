@@ -1,0 +1,111 @@
+html {
+  font-family: sans-serif;
+  -ms-scroll-snap-type: mandatory;
+      scroll-snap-type: mandatory;
+  -ms-scroll-snap-points-y: repeat(100vh);
+      scroll-snap-points-y: repeat(100vh);
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background: #333432;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(32%, #333432), color-stop(76%, #6e6e6e));
+  background: linear-gradient(180deg, #333432 32%, #6e6e6e 76%);
+}
+
+section {
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.materi {
+  width: 100%;
+  background: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.materi .container {
+  text-align: center;
+  padding: 6vh;
+}
+
+.materi .container h2 {
+  padding: 3px;
+  font-size: 3em;
+  text-align: center;
+}
+
+.materi .container h2 .and {
+  font-size: 0.6em;
+}
+
+.materi .container h2 a .mbn {
+  color: greenyellow;
+  font-size: 2em;
+}
+
+.materi .container h2 a .ml5 {
+  color: #a15ffb;
+  font-size: 2em;
+}
+
+.materi .container h3 {
+  font-size: 1.5em;
+}
+
+.video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  background: none;
+}
+
+.video .title {
+  padding: 6vh;
+  background: none !important;
+  text-align: center;
+}
+
+.video .title h2 {
+  background: none !important;
+  margin-bottom: 10px;
+  font-size: 3em;
+}
+
+.video .title h2 span {
+  color: #202020;
+  background: none !important;
+}
+
+.video iframe {
+  height: 100vh;
+}
+
+footer {
+  background-color: #6e6e6e;
+}
+
+footer span {
+  background-color: #6e6e6e;
+  color: #333432;
+}
+/*# sourceMappingURL=home.css.map */

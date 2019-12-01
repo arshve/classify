@@ -1,4 +1,47 @@
 <% include partials/header %>
+<link rel="stylesheet" href="/stylesheet/home.css" />
+<link rel="stylesheet" href="https://cdn.plyr.io/3.4.6/plyr.css" />
 
-<h1 style="color: red">Home</h1>
+<main>
+  <section class="materi">
+    <div class="container">
+      <h2>Client-Side Machine Learning</h2>
+      <h3>with</h3>
+      <h2>
+        <a
+          href="https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html"
+          target="_blank"
+          ><span class="mbn"> MobileNet</span></a
+        >
+        <span class="and"> and </span>
+        <a href="https://ml5js.org/" target="_blank"
+          ><span class="ml5"> ML5.js</span></a
+        >
+      </h2>
+      <hr />
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+        quaerat sequi, impedit quasi dolore magnam rerum illo officia
+        necessitatibus autem eius quae doloribus numquam perferendis natus vero
+        consectetur. Necessitatibus, minus.
+      </p>
+    </div>
+  </section>
+  <section class="video">
+    <div class="title">
+      <h2>Machine Learning <span> Video</span></h2>
+      <hr />
+    </div>
+    <iframe
+      width="100%"
+      src="https://www.youtube.com/embed/videoseries?list=PLUbchGVrnqlB5n4cVuFiz-eBt5oza9BGY"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </section>
+</main>
+
+<script src="../public/js/homeVid.js"></script>
+<script src="https://bundle.run/css-scroll-snap-polyfill@0.1.2"></script>
 <% include partials/footer %>
