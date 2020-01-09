@@ -10,6 +10,10 @@ header {
   background-color: #333432;
 }
 
+header nav {
+  margin-right: 12vh;
+}
+
 svg {
   cursor: pointer;
   height: 40px;
@@ -289,7 +293,7 @@ main {
 }
 
 .imgItem {
-  height: 8vh;
+  height: auto;
   margin: 15px;
   cursor: pointer;
   border: 1px solid whitesmoke;

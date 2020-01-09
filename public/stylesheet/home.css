@@ -33,9 +33,6 @@ section {
 .materi {
   width: 100%;
   background: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .materi .container {
@@ -43,10 +40,14 @@ section {
   padding: 6vh;
 }
 
+.materi .container h2.first {
+  margin-right: 0;
+}
+
 .materi .container h2 {
-  padding: 3px;
   font-size: 3em;
-  text-align: center;
+  margin-right: 8vh;
+  margin-top: -2.4vh;
 }
 
 .materi .container h2 .and {

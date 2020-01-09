@@ -3,6 +3,9 @@ header {
   justify-content: space-between;
   padding: 30px 5%;
   background-color: $primaryColor;
+  nav {
+    margin-right: 12vh;
+  }
 }
 
 svg {

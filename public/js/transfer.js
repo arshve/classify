@@ -10,7 +10,7 @@ let video = document.querySelector("#videoStream");
 let option = {
   learningRate: 0.0001,
   hiddenUnits: 100,
-  epochs: 25,
+  epochs: 20,
   numClasses: 2,
   batchSize: 16
   // BatchSize 16,32,64,128,256

@@ -31,14 +31,17 @@ section {
 .materi {
   width: 100%;
   background: none;
-  align-items: center;
+  // align-items: center;
   .container {
     text-align: center;
     padding: 6vh;
+    h2.first {
+      margin-right: 0;
+    }
     h2 {
-      padding: 3px;
       font-size: 3em;
-      text-align: center;
+      margin-right: 8vh;
+      margin-top: -2.4vh;
       .and {
         font-size: 0.6em;
       }

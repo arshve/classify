@@ -42,6 +42,7 @@ const EMBEDDING_NODES = {
   2: "module_apply_default/MobilenetV2/Logits/AvgPool"
 };
 
+// import MobileNet dengan settingnya
 class Mobilenet {
   constructor(options, callback) {
     this.mobilenet = null;
@@ -383,7 +384,7 @@ class Mobilenet {
       const predictions = this.jointModel.predict(processedImg);
       return Array.from(predictions.as1D().dataSync());
     });
-    const results = await predictedClasses.map((confidence, index) => {
+    const results = await predictedClasses.map(index => {
       const label =
         this.mapStringToIndex.length > 0 && this.mapStringToIndex[index]
           ? this.mapStringToIndex[index]
